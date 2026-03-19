@@ -7,7 +7,7 @@ engine = create_engine('postgresql://user:password@localhost:5432/database')
 
 # Função para carregar dados de uma view 
 def load_data(view_name): 
-return pd.read_sql(f"SELECT * FROM {view_name}", engine) 
+    return pd.read_sql(f"SELECT * FROM {view_name}", engine) 
 
 # Título do dashboard 
 st.title('Dashboard de Temperaturas IoT') 
