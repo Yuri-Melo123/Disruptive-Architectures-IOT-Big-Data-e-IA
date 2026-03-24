@@ -1,3 +1,4 @@
+import streamlit as st
 import pandas as pd 
 import plotly.express as px 
 from sqlalchemy import create_engine 
@@ -28,3 +29,4 @@ st.plotly_chart(fig2)
 st.header('Temperaturas Máximas e Mínimas por Dia') 
 df_temp_max_min = load_data('temp_max_min_por_dia') 
 fig3 = px.line(df_temp_max_min, x='data', y=['temp_max', 'temp_min']) 
+st.plotly_chart(fig3) 
