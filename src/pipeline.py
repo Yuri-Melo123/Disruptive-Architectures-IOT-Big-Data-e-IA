@@ -2,7 +2,9 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # conexão com banco
-engine = create_engine('postgresql://postgres:1234@localhost:5432/postgres')
+engine = create_engine(
+    "postgresql+psycopg://postgres:1234@localhost:5432/postgres"
+)
 
 # ler CSV
 df = pd.read_csv('data/temperature_readings.csv')

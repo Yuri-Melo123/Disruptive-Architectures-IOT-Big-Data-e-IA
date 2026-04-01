@@ -3,7 +3,9 @@ import pandas as pd
 import plotly.express as px
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://postgres:1234@localhost:5432/postgres')
+engine = create_engine(
+    "postgresql+psycopg://postgres:1234@localhost:5432/postgres"
+)
 
 def load_data(view):
     return pd.read_sql(f"SELECT * FROM {view}", engine)
