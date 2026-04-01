@@ -25,4 +25,4 @@ st.plotly_chart(px.line(df2, x='hora', y='contagem'))
 # gráfico 3
 df3 = load_data('temp_max_min_por_dia')
 st.header('Temperatura por dia')
-st.plotly_chart(px.line(df3, x='data', y=['temp_max', 'temp_min']))
+st.plotly_chart(px.line(df3, x='dia', y=['temp_max', 'temp_min']))
