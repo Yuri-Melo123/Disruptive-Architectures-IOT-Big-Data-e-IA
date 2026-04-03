@@ -3,26 +3,27 @@ import pandas as pd
 import plotly.express as px
 from sqlalchemy import create_engine
 
-engine = create_engine(
-    "postgresql+psycopg://postgres:1234@localhost:5432/postgres"
-)
+engine = create_engine("postgresql+psycopg://postgres:1234@localhost:5432/postgres")
 
-def load_data(view):
-    return pd.read_sql(f"SELECT * FROM {view}", engine)
+st.title('Dashboard IoT - Temperaturas')
 
-st.title('Dashboard IoT')
+try:
+    df1 = pd.read_sql("SELECT * FROM avg_temp_por_dispositivo", engine)
+    st.header('Média de temperatura por dispositivo')
+    st.plotly_chart(px.bar(df1, x='room_id', y='avg_temp'))
+except Exception as e:
+    st.error(f"Erro: {e}")
 
-# gráfico 1
-df1 = load_data('avg_temp_por_dispositivo')
-st.header('Média por dispositivo')
-st.plotly_chart(px.bar(df1, x='device_id', y='avg_temp'))
+try:
+    df2 = pd.read_sql("SELECT * FROM leituras_por_hora", engine)
+    st.header('Leituras por hora do dia')
+    st.plotly_chart(px.line(df2, x='hora', y='contagem'))
+except Exception as e:
+    st.error(f"Erro: {e}")
 
-# gráfico 2
-df2 = load_data('leituras_por_hora')
-st.header('Leituras por hora')
-st.plotly_chart(px.line(df2, x='hora', y='contagem'))
-
-# gráfico 3
-df3 = load_data('temp_max_min_por_dia')
-st.header('Temperatura por dia')
-st.plotly_chart(px.line(df3, x='dia', y=['temp_max', 'temp_min']))
+try:
+    df3 = pd.read_sql("SELECT * FROM temp_max_min_por_dia", engine)
+    st.header('Temperaturas máximas e mínimas por dia')
+    st.plotly_chart(px.line(df3, x='dia', y=['temp_max', 'temp_min']))
+except Exception as e:
+    st.error(f"Erro: {e}")

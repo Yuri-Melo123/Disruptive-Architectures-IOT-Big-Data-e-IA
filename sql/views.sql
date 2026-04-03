@@ -1,20 +1,19 @@
--- 1. Média por dispositivo
-CREATE VIEW avg_temp_por_dispositivo AS
-SELECT device_id, AVG(temperature) AS avg_temp
+-- sql/views.sql
+CREATE OR REPLACE VIEW avg_temp_por_dispositivo AS
+SELECT room_id, AVG(temperature) as avg_temp
 FROM temperature_readings
-GROUP BY device_id;
+GROUP BY room_id;
 
--- 2. Leituras por hora
-CREATE VIEW leituras_por_hora AS
-SELECT EXTRACT(HOUR FROM timestamp) AS hora,
-COUNT(*) AS contagem
+CREATE OR REPLACE VIEW leituras_por_hora AS
+SELECT EXTRACT(HOUR FROM noted_date) as hora, COUNT(*) as contagem
 FROM temperature_readings
-GROUP BY hora;
+GROUP BY hora
+ORDER BY hora;
 
--- 3. Máx e mín por dia
-CREATE VIEW temp_max_min_por_dia AS
-SELECT DATE(timestamp) AS data,
-MAX(temperature) AS temp_max,
-MIN(temperature) AS temp_min
+CREATE OR REPLACE VIEW temp_max_min_por_dia AS
+SELECT DATE(noted_date) as dia,
+       MAX(temperature) as temp_max,
+       MIN(temperature) as temp_min
 FROM temperature_readings
-GROUP BY data;
+GROUP BY dia
+ORDER BY dia;
