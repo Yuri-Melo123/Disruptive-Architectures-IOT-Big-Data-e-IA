@@ -8,7 +8,9 @@ O objetivo é demonstrar na prática conceitos de Ingestão, Armazenamento, Proc
 
 ## Tecnologias Utilizadas
 
-Ferramenta              Finalidade
+```
+* Ferramenta      X     # Finalidade
+```
 ```
 * Python 3.10+	        # Linguagem principal do pipeline e dashboard
 * Pandas	            # Leitura, limpeza e transformação dos dados
@@ -19,6 +21,7 @@ Ferramenta              Finalidade
 * Plotly	            # Geração de gráficos dinâmicos
 * Git/GitHub	        # Controle de versão e entrega do projeto
 ```
+
 ## Estrutura do Projeto
 
 ```
@@ -48,8 +51,10 @@ Pré‑requisitos:
 * Python 3.10+ instalado
 * Git (opcional, para clonar o repositório)
 * Baixe o dataset
+```
     Acesse Temperature Readings: IoT Devices no Kaggle.
     Faça o download do arquivo IOT-temp.csv e coloque-o na pasta data/ do projeto.
+```
 
 ### 1. Clonar o repositório
 
@@ -90,7 +95,7 @@ Três views foram implementadas no banco PostgreSQL para responder a perguntas d
 ### 🔹 Média de temperatura por dispositivo
 
 * avg_temp_por_dispositivo
-    Permite identificar quais dispositivos apresentam maiores temperaturas médias.
+    - Permite identificar quais dispositivos apresentam maiores temperaturas médias.
 
 ```
 SELECT room_id, AVG(temperature) as avg_temp
@@ -102,7 +107,7 @@ Propósito: Mostrar a temperatura média de cada cômodo/dispositivo, permitindo
 ### 🔹 Leituras por hora
 
 * leituras_por_hora 
-    Mostra o volume de dados coletados ao longo do dia.
+    - Mostra o volume de dados coletados ao longo do dia.
 
 ```
 SELECT EXTRACT(HOUR FROM noted_date) as hora, COUNT(*) as contagem
@@ -115,7 +120,7 @@ Propósito: Revelar o volume de leituras ao longo das 24 horas do dia. Pode indi
 ### 🔹 Temperaturas máximas e mínimas por dia
 
 * temp_max_min_por_dia
-    Permite analisar variações térmicas diárias.
+    - Permite analisar variações térmicas diárias.
 
 ```
 SELECT DATE(noted_date) as dia,
