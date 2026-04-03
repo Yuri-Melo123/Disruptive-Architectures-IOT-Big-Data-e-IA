@@ -94,6 +94,8 @@ Três views foram implementadas no banco PostgreSQL para responder a perguntas d
 
 ### 🔹 Média de temperatura por dispositivo
 
+![alt text](image.png)
+
 * avg_temp_por_dispositivo
     - Permite identificar quais dispositivos apresentam maiores temperaturas médias.
 
@@ -105,6 +107,8 @@ GROUP BY room_id;
 Propósito: Mostrar a temperatura média de cada cômodo/dispositivo, permitindo identificar quais ambientes são naturalmente mais quentes ou mais frios. 
 
 ### 🔹 Leituras por hora
+
+![alt text](image-1.png)
 
 * leituras_por_hora 
     - Mostra o volume de dados coletados ao longo do dia.
@@ -118,6 +122,8 @@ ORDER BY hora;
 Propósito: Revelar o volume de leituras ao longo das 24 horas do dia. Pode indicar períodos de maior atividade dos sensores ou horários de pico de monitoramento.
 
 ### 🔹 Temperaturas máximas e mínimas por dia
+
+![alt text](image-2.png)
 
 * temp_max_min_por_dia
     - Permite analisar variações térmicas diárias.
