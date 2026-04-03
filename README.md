@@ -8,16 +8,17 @@ O objetivo é demonstrar na prática conceitos de Ingestão, Armazenamento, Proc
 
 ## Tecnologias Utilizadas
 
-###Ferramenta           ###Finalidade
-* Python 3.10+	        Linguagem principal do pipeline e dashboard
-* Pandas	            Leitura, limpeza e transformação dos dados
-* SQLAlchemy	        Conexão e manipulação do banco de dados
-* PostgreSQL	        Banco de dados relacional para armazenamento
-* Docker	            Containerização do PostgreSQL
-* Streamlit	            Criação do dashboard interativo
-* Plotly	            Geração de gráficos dinâmicos
-* Git/GitHub	        Controle de versão e entrega do projeto
-
+Ferramenta              Finalidade
+```
+* Python 3.10+	        # Linguagem principal do pipeline e dashboard
+* Pandas	            # Leitura, limpeza e transformação dos dados
+* SQLAlchemy	        # Conexão e manipulação do banco de dados
+* PostgreSQL	        # Banco de dados relacional para armazenamento
+* Docker	            # Containerização do PostgreSQL
+* Streamlit	            # Criação do dashboard interativo
+* Plotly	            # Geração de gráficos dinâmicos
+* Git/GitHub	        # Controle de versão e entrega do projeto
+```
 ## Estrutura do Projeto
 
 ```
