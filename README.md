@@ -28,7 +28,7 @@ O objetivo é demonstrar na prática conceitos de Ingestão, Armazenamento, Proc
 Disruptive-Architectures-IOT-Big-Data-e-IA/
 │
 ├── data/
-│   └── IOT-temp.csv                     # Dataset original (não incluso no repositório – instruções para download)
+│   └── IOT-temp.csv                     # Dataset original
 │
 ├── sql/
 │   └── views.sql                        # Definição das views (opcional, pois o setup as cria)
