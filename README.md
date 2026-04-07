@@ -171,10 +171,10 @@ git pull	                    Atualiza o repositório local com mudanças do remo
 
 ## Link para a explicação no Youtube
 
-https://youtu.be/
-
-Desenvolvido por Yuri de Oliveira Melo
+https://youtu.be/9LIQQWa-Nuw
 
 ## Licença
 
 Este projeto é de uso educacional – sinta-se livre para usá-lo como referência em seus estudos.
+
+Desenvolvido por Yuri de Oliveira Melo

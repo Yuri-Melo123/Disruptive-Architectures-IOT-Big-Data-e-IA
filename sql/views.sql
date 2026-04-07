@@ -1,4 +1,3 @@
--- sql/views.sql
 CREATE OR REPLACE VIEW avg_temp_por_dispositivo AS
 SELECT room_id, AVG(temperature) as avg_temp
 FROM temperature_readings
